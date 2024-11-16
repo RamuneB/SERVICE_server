@@ -1,4 +1,3 @@
-
 const Business = require('../HomeServiceAPI/models/Business');
 
 exports.getAllBusinesses = async (req, res) => {
@@ -18,5 +17,3 @@ exports.getBusinessesByCategory = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch businesses by category' });
   }
 };
-
-// Other businessController methods here...

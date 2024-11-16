@@ -1,4 +1,3 @@
-
 const Booking = require('../HomeServiceAPI/models/Booking');
 
 exports.getBookingsByUserEmail = async (req, res) => {
@@ -19,5 +18,3 @@ exports.createBooking = async (req, res) => {
     res.status(400).json({ error: 'Failed to create booking' });
   }
 };
-
-// Other bookingController methods here...
