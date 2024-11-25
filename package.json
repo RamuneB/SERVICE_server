@@ -5,8 +5,10 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "start": "node dist/index.ts",
+    "dev": "ts-node src/server.ts",
+    "serve": "concurrently \"npm run dev\" \"npm run start-mongo\"",
+    "start-mongo": "start \"MongoDB\" \"mongod\""
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -15,6 +17,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.10.0",
     "mongoose": "^8.8.2"
   },
   "devDependencies": {
@@ -23,10 +26,12 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.7",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.9.1",
+    "concurrently": "^9.1.0",
     "eslint": "^9.15.0",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
+    "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
